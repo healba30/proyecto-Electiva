@@ -293,6 +293,25 @@ footer{
 	color: white;
 	box-shadow: 7px 13px 37px #000;
 }
+
+.form-registerR{
+	display: flex;
+	width: 400px;
+	background: rgb(105, 166, 235);
+	padding: 30px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	margin-left: 10px;
+	border-radius: 4px;
+	font-family: 'calibri';
+	color: white;
+	box-shadow: 7px 13px 37px #000;
+	position: relative;
+	right: -35%;
+}
+
+
 .izq{
 	height: 50vh;
 	width: 50%;
@@ -307,11 +326,24 @@ footer{
 	width: 50%;
 	height: 50vh;
 }
+
 .form-register h4{
+	
 	font-size: 22px;
 	margin-bottom: 20px;
 
 }
+
+.form-registerR h4{
+	
+	font-size: 15px;
+	margin-bottom: 20px;
+	position: relative;
+	right: -57%;
+	
+
+}
+
 .controls{
 	width: auto;
 	background: rgb(105, 166, 235);
@@ -333,18 +365,11 @@ footer{
 	font-family: 'calibri';
 	font-size: 18px;
 	position: relative;
-	right: -350%;
+	right: -37%;
 	font-weight: bold;
+	top: 0%;
 }
-.form-register p{
-	height: 40px;
-	text-align: center;
-	font-size: 18px;
-	line-height: 40px;
-}
-.form-register a{
-	color: white;
-}
+
 .form-register .boton{
 	width: 100%;
 	background: rgb(3, 48, 85);
@@ -355,4 +380,16 @@ footer{
 	font-size: 16px;
 }
 
+.form-registerR .botonR{
+	width: 100%;
+	background: rgb(3, 48, 85);
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 16px 0;
+	font-size: 16px;
+	position: relative;
+	right: -50%;
+	top: 0%;
+}
 

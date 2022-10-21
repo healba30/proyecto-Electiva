@@ -4,67 +4,115 @@
 	<title>Mapa Turistico</title>
     <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="img/descarga-assets/Captura.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-
-
-    <header>
-
-        <nav>
-
-            <a href="Inicio.html">Inicio</a>
-            <a href="Restaurante.html">Restaurantes</a>
-            <a href="Discotecas.html">Discotecas</a>
-            <a href="Moteles.html">Moteles</a>
-            <a href="Registrate.html">Registrate</a>
-            <a href="Contactos.html">Contactanos</a>
-
-            
-        </nav>
-
-        <div class="container">
-            <input type="text" placeholder="Buscar">
-            
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Restaurantes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Hoteles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Discotecas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">Registrate</a>
+            </li>
+            </ul>
         </div>
-
-        <div class="btn" onclick="alert('No hay nada')">
-            <i class="fa fa-search"></i>
         </div>
-    
-            <section class="textos-header">
-                <h1>Guía de restaurantes</h1>
-                <h2>Encuentra tus restaurantes favoritos aquí</h2>
-            </section>
-
-            <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,-1.45 C161.11,56.75 377.82,29.13 500.84,2.48 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(251, 252, 253);"></path></svg></div>
-    
-    </header>
-
-    <main>
-        <section class="form-register">
-            <div class="izq">
-                <h4>Busqueda de restaurante</h4>
-            <input class="controls" type="text" name="nombre" id="nombre-rest" placeholder="Ingresa el restaurante">
-            <input class="controls" type="text" name="direccion" id="direcciones" placeholder="Ingresa la dirección">
-            <input class="controls" type="text" name="telefono" id="telefonos" placeholder="Ingresa el telefono">
-                       
-            <input class="boton" type="submit" name="buscar" id="registro_btn">
+    </nav> 
+    <div class="container2 m-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <h2>Listado de hoteles</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="Hotel" class="form-label"></label>
+                        <input type="email" class="form-control" id="Hotel" placeholder="Nombre del hotel">
+                      </div>
+                      <div class="mb-3">
+                        <label for="direccion" class="form-label"></label>
+                        <input type="email" class="form-control" id="direccion" placeholder="Direccion Hotel">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Telefono" class="form-label"></label>
+                        <input type="email" class="form-control" id="Telefono" placeholder="Numero telefonico">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Estrellas" class="form-label"></label>
+                        <input type="text" class="form-control" id="Hotel" placeholder="Estrellas">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Descripción" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="Descripción" rows="3"></textarea>
+                      </div>
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-success">Guardar</button>
+                        <button class="btn btn-secondary">Limpiar</button>
+                      </div>
+                </form>
+                
+ </div>
             </div>
-            <div class="dere">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63691.096383327545!2d-77.05822178731839!3d3.8757474146595907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e372470d3ee86eb%3A0xa3e3b101691f2b6a!2sBuenaventura%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1665176782089!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-             </div>
-        </section>
-    </main>
-    <footer>
-        &copy; Tuwebfacil.biz 2022 | 3174266043 | tuwebfacil@gmail.com
-    </footer>
-	
-	
-	
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Hotel</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Estrellas</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hotel cosmo</td>
+                            <td>centro</td>
+                            <td>9032473</td>
+                            <td>5</td>
+                            <td>Comodas habitaciones</td>
+                        </tr>
+                        <tr>
+                            <td>Hotel torremar</td>
+                            <td>centro</td>
+                            <td>9032473</td>
+                            <td>4</td>
+                            <td>Comodas habitaciones</td>
+                        </tr>
+                        <tr>
+                            <td>Hotel delfines</td>
+                            <td>centro</td>
+                            <td>9032473</td>
+                            <td>2</td>
+                            <td>Comodas habitaciones</td>
+                        </tr>
+                        <tr>
+                            <td>Hotel estacion</td>
+                            <td>centro</td>
+                            <td>9032473</td>
+                            <td>3</td>
+                            <td>Comodas habitaciones</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+    </div>
+        <div class="row"></div>
+        
+        
 </body>
 </html>

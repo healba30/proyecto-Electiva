@@ -1,5 +1,8 @@
 <html lang="en">
 <head>
+
+    
+
 	<meta charset="UTF-8">
 	<title>Mapa Turistico</title>
     <link rel="stylesheet" href="">
@@ -7,9 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
 </head>
 <body>
-
     <header>
 
         <nav>
@@ -17,7 +20,7 @@
             <a href="Inicio.html">Inicio</a>
             <a href="Restaurante.html">Restaurantes</a>
             <a href="Discotecas.html">Discotecas</a>
-            <a href="Moteles.html">Moteles</a>
+            <a href="Moteles.html">Hoteles</a>
             <a href="Registrate.html">Registrate</a>
             <a href="Contactos.html">Contactanos</a>
 
@@ -34,14 +37,16 @@
         </div>
     
             <section class="textos-header">
-                <h1>Guía de moteles</h1>
+                <h1>Guía de Hoteles</h1>
                 <h2>Encuentra tus moteles favoritos aquí</h2>
             </section>
 
-            <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.10,-1.45 C161.11,56.75 377.82,29.13 500.84,2.48 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(251, 252, 253);"></path></svg></div>
+            
     
     </header>
     <main>
+
+        
         
         <section class="form-register">
             <div class="izq">
@@ -50,7 +55,7 @@
             <input class="controls" type="text" name="direccion" id="direcciones" placeholder="Ingresa la dirección">
             <input class="controls" type="text" name="telefono" id="telefonos" placeholder="Ingresa el telefono">                 
            
-            <input class="boton" type="submit" name="buscar" id="registro_btn">
+            <input class="boton" type="submit" name="buscar" id="registro_btn" onclick="alert('No hay nada')">
             </div>
 
          <div class="dere">
@@ -67,4 +72,22 @@
 	
 	
 </body>
+<script
+			  src="https://code.jquery.com/jquery-3.6.1.js"
+			  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+			  crossorigin="anonymous"></script>
 </html>
+<script>
+    $(document).ready(function(){
+       $("#guardar").on("click",function(){
+        
+
+        
+       })
+       $("#nombre").on("focus",function(){
+        $("#nombre").attr("class","nueva");
+        
+       })
+
+    });
+</script>

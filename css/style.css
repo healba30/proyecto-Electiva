@@ -92,6 +92,8 @@ nav > a{
 
 nav > a:hover{
 	text-decoration: underline;
+	color: #000;
+	font-weight: bold;
 }
 
 header .textos-header{
@@ -160,12 +162,14 @@ header .textos-header{
  .contenido-textos > a{
 	color: rgb(0, 0, 0);
 	text-decoration: none;
-	font-weight: bold;
+	
 
 }
 
 .contenido-textos > a:hover{
 	text-decoration: underline;
+	color: #000;
+	font-weight: bold;
 }
 
 .contenido-textos p{
@@ -246,6 +250,7 @@ header .textos-header{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	border-radius: 10%;
 
 }
 
@@ -292,6 +297,8 @@ footer{
 	font-family: 'calibri';
 	color: white;
 	box-shadow: 7px 13px 37px #000;
+	position: relative;
+	right: -10%;
 }
 
 .form-registerR{
@@ -329,8 +336,10 @@ footer{
 
 .form-register h4{
 	
-	font-size: 22px;
+	font-size: 15px;
 	margin-bottom: 20px;
+	position: relative;
+	right: -53%;
 
 }
 
@@ -353,6 +362,8 @@ footer{
 	border: 1px solid rgb(3, 48, 85);
 	font-family: 'calibri';
 	font-size: 18px;
+	position: relative;
+	right: -37%;
 	font-weight: bold;
 }
 .controlsr{
@@ -378,6 +389,14 @@ footer{
 	color: white;
 	margin: 16px 0;
 	font-size: 16px;
+	position: relative;
+	right: -50%;
+	top: 5%;
+	cursor: pointer;
+}
+
+.boton:hover{
+	background: rgb(7, 34, 53);
 }
 
 .form-registerR .botonR{
@@ -390,6 +409,10 @@ footer{
 	font-size: 16px;
 	position: relative;
 	right: -50%;
-	top: 0%;
+	top: 5%;
+	cursor: pointer;
 }
 
+.botonR:hover{
+	background: rgb(7, 34, 53);
+}

@@ -4,8 +4,7 @@
 	<title>Formulario Registro</title>
     <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="img/descarga-assets/Captura.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style2.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/stylef.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
@@ -18,36 +17,36 @@
             <a href="Restaurante.html">Restaurantes</a>
             <a href="Discotecas.html">Discotecas</a>
             <a href="Moteles.html">Hoteles</a>
-            <a href="Registrate.html">Resgistrate</a>
+            <a href="Registrate.html">Registrate</a>
             <a href="Contactos.html">Contactanos</a>
 
             
         </nav>
-
-        
-        <section class="textos-header">
-            <h1>Registrate</h1>            
-        </section>
-        
-
+    
     </header>
-    <main>
-        <section class="form-registerR">
-           <div class="izq">
-            <h4>Formulario de registro</h4>
-            <input class="controlsr" type="text" name="nombre" id="nombres" placeholder="Ingresa tu nombre">
-            <input class="controlsr" type="text" name="apellido" id="apellidos" placeholder="Ingresa tu apellido">
-            <input class="controlsr" type="email" name="correo" id="email" placeholder="Ingresa tu email">
-            <input class="controlsr" type="password" name="contraseña" id="pass" placeholder="Ingresa tu contraseña">
-        
-            <input class="botonR" type="submit" name="registrar" id="registro_btn" onclick="alert('No hay nada')">
-           </div>
-        </section>
-    </main>
-    <footer>
-        &copy; Tuwebfacil.biz 2022 | 3174266043 | tuwebfacil@gmail.com
-    </footer>
-	
-	
+
+        <form action="" method="POST" id="form">
+
+            <div class="form">
+                <h1>Registrar</h1>
+                <div class="grupo">
+                    <input type="text" name="" id="name" required><span class="barra"></span>
+                    <label for="">Nombre</label>
+                </div> 
+                <div class="grupo">
+                    <input type="email" name="" id="name" required><span class="barra"></span>
+                    <label for="">Correo</label>
+                </div>
+                <div class="grupo">
+                    <input type="password" name="" id="name" required><span class="barra"></span>
+                    <label for="">Contraseña</label>
+                </div>
+                <button type="submit">Registrarse</button>
+            </div>
+    
+        </form>
+
+    <script src="main.js"></script>
+
 </body>
 </html>

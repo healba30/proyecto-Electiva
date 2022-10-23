@@ -1,13 +1,11 @@
 <html lang="en">
 <head>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
 	<meta charset="UTF-8">
 	<title>Mapa Turistico</title>
     <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="img/descarga-assets/Captura.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/estyle.css">
+    <link rel="stylesheet" href="css/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
@@ -19,7 +17,7 @@
             <a href="Inicio.html">Inicio</a>
             <a href="Restaurante.html">Restaurantes</a>
             <a href="Discotecas.html">Discotecas</a>
-            <a href="Moteles.html">Hoteles</a>
+            <a href="Moteles.html">Moteles</a>
             <a href="Registrate.html">Resgistrate</a>
             <a href="Contactos.html">Contactanos</a>
             
@@ -32,73 +30,9 @@
         </section>
 
     </header>
-    
-        <H2>Lista de hoteles</H2>
-        <form action="">
-            Consultar dias<input type="text" name="dias" id="campo">
-            <button class="btn btn-warning" id="buscar">Consultar</button>
-            <button id="new" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-               Agregar
-              </button>
-    <!-- Button trigger modal -->
-      
-      <!-- Modal -->
-    
-      
-    
-        </form>
-        <table class="table table-striped table-hover">
-            
-            <thead>
-                <tr><th>Nombre</th><th>Telefono</th><th>Direccion</th><th>Calificación</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cosmos</td>
-                    <td>2323232</td>
-                    <td>Centro de la ciudad | Malecon</td>
-                    <td>4.5 Estrellas</td>
-                </tr>
-                <tr>
-                    <td>torremar</td>
-                    <td>2342132</td>
-                    <td>Centro de la ciudad</td>
-                    <td>3.5 Estrellas</td>
-                </tr>
-                <tr>
-                    <td>Hotel estacion</td>
-                    <td>4211221</td>
-                    <td>Centro de la ciudad | Malecon</td>
-                    <td>4 Estrellas</td>
-                </tr>
-                
-            </tbody>
-        </table>
+    <main>
         
-          
-          <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <label for="">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="algo">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <div id="ejemplo"></div>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button id="guardar" type="button" class="btn btn-primary">Guardar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        
+    </main>
     <footer>
         &copy; Tuwebfacil.biz 2022 | 3174266043 | tuwebfacil@gmail.com
     </footer>
@@ -106,22 +40,4 @@
 	
 	
 </body>
-<script
-			  src="https://code.jquery.com/jquery-3.6.1.js"
-			  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-			  crossorigin="anonymous"></script>
 </html>
-<script>
-    $(document).ready(function(){
-       $("#guardar").on("click",function(){
-        
-
-        
-       })
-       $("#nombre").on("focus",function(){
-        $("#nombre").attr("class","nueva");
-        
-       })
-
-    });
-</script>

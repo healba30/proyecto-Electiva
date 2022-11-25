@@ -1,8 +1,13 @@
 const nombre = document.getElementById("name")
 const email = document.getElementById("email")
 const pass = document.getElementById("password")
+const pass1 = document.getElementById("password1")
 const form = document.getElementById("form")
 const parrafo = document.getElementById("warnings")
+let ent = false
+let ent1 = false
+let ent2 = false
+let ent3 = false
 
 form.addEventListener("submit", e=>{
 
@@ -11,6 +16,8 @@ form.addEventListener("submit", e=>{
     let entrar = false
     let entrar1 = false
     let entrar2 = false
+    let entrar3 = false
+
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     parrafo.innerHTML = ""
 
@@ -28,39 +35,40 @@ form.addEventListener("submit", e=>{
 
     }
 
-    if(pass.value.length < 8){
+    if(pass.value.length == 0 || pass.value.length < 8){
         
-        warnings += `La contraseña no es valida <br>`
+        warnings += `La contraseña debe tener un minimo de 8 caracteres <br>`
         entrar2 = true
     }
 
-    if (entrar==false) {
+    if(pass.value != pass1.value){
+        
+        warnings += `Las contraseñas no coinciden <br>`
+        entrar3 = true
+    }
+
+    if (entrar==true) {
 
         parrafo.innerHTML = warnings
         
-    } else {
-        parrafo.innerHTML = "Enviado"
-    }
+    } 
 
-    if (entrar1=false) {
+    if (entrar1=true) {
 
         parrafo.innerHTML = warnings
         
-    } else {
-        parrafo.innerHTML = "Enviado"
-    }
+    } 
     
-    if (entrar2==false) {
+    if (entrar2==true) {
 
         parrafo.innerHTML = warnings
             
-    } else {
-        parrafo.innerHTML = "Enviado"
-    }
+    } 
 
+    if (entrar3==true) {
+
+        parrafo.innerHTML = warnings
+            
+    } 
     
-
-
-    
-})
-
+});

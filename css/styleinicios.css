@@ -27,12 +27,12 @@ body{
 
 h1{
     text-align: center;
-    font-weight: 500;
+    font-weight: 200;
 }
 
 form{
     background: #fff;
-    padding: -10px 0;
+    padding: 25px 0;
     box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
     border-radius: 10px;
 }
@@ -44,7 +44,7 @@ form{
 
 form .grupo{
     position: relative;
-    margin: 30px;
+    margin: 50px;
 }
 
 input{
@@ -117,7 +117,7 @@ button{
 nav{
 	position: absolute;
 	left: 55%;
-	top: -2%;
+	top: 1%;
 	padding: 30px 50px 0 0;
 }
 
@@ -134,11 +134,10 @@ nav > a:hover{
 	font-weight: bold;
 }
 
-
 .warnings{
-    width: 300px;
+    width: 200px;
     text-align: center;
     margin: auto;
     color: #B06AB3;
-    padding-top: -20px;
+    padding-top: 20px;
 }

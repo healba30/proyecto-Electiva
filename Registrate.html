@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylef.css">
     <link rel="stylesheet" type="text/css" href="css/stylef.css">
     <link rel="shortcut icon" href="img/descarga-assets/Captura.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
@@ -25,8 +24,8 @@
             <a href="Discotecas.html">Discotecas</a>
             <a href="Moteles.html">Hoteles</a>
             <a href="Registrate.html">Registrate</a>
+            <a href="inicios.php">Iniciar sesión</a>
             <a href="Contactos.html">Contactanos</a>
-
             
         </nav>
 
@@ -37,23 +36,31 @@
         <div class="form">
             <h1>Registro</h1>
             <div class="grupo">
-                <input type="text" name="nombres" id="name" ><span class="barra"></span>
+                <input type="text" name="nombres" id="name" placeholder="Ingrese su nombre completo"><span class="barra"></span>
                 <label for="">Nombres</label>
             </div>
             <div class="grupo">
-                <input type="email" name="correo" id="email" ><span class="barra"></span>
-                <label for="">Correo Electronico</label>
+                <input type="text" name="usuarios" id="users" placeholder="Escriba un usuario"><span class="barra"></span>
+                <label for="">Usuario</label>
             </div>
             <div class="grupo">
-                <input type="password" name="clave" id="password" ><span class="barra"></span>
+                <input type="email" name="correo" id="email" placeholder="Ingrese un correo"><span class="barra"></span>
+                <label for="">Correo Electronico</label>
+            </div>
+            <div id="mensaje"></div>
+            <div class="grupo">
+                <input type="password" name="clave" id="password" placeholder="Ingrese una contraseña"><span class="barra"></span>
                 <label for="">Contraseña</label>
             </div>
-            <button type="submit" id="Enviar" >Registrar</button>
+            <div class="grupo">
+                <input type="password" name="clave1" id="password1" placeholder="Repita la contraseña"><span class="barra"></span>
+            </div>
+            <button type="submit" id="Enviar" name="Enviar" >Registrar</button>
             <p class="warnings" id="warnings"></p>
         </div>
     </form>
 
-    <div id="respuesta"></div>
+    
 
     <script src="codigo.js"></script>
 
@@ -61,60 +68,234 @@
 
 <script>  
 
-    $('#Enviar').click(function(){
+    
+
+   /*$(document).ready(function() {
         
-        const nombre = document.getElementById("name")
-        const correo = document.getElementById("email")
-        const pass = document.getElementById("password")
-        let warnings = ""
-        let entrar = false
-        
-        if(nombre.value.length > 0){
-      
-        if(pass.value.length > 0){
-          
-        if (correo.value.length > 0) {
+        $("#correo").on("focusout", function() {
 
-            $.ajax({
-            url: 'registro.php',
-            type: 'POST',
-            data: $('#form').serialize(),
+            let warnings = ""
+            let ent = false
+            
+            
+                $.ajax({
+          url: 'verificar.php',
+          type: 'POST',
+          data: $('#form').serialize(),
 
-            success: function(res){
+          success: function(resul){
 
-                if (res==1) {
+                    if (resul==1) {
+                        warnings += `correo disponible`
+                        ent = true
 
-                alert("Los datos se registraron correctamente.");
-                form.reset();
-                
-                } else {
-
-                    alert("Correo electronico existente");
-                    $('#email').val("");
-                    warnings += `El correo electronico ya existe <br>`
-                    entrar = true;
-                    
-                    if (entrar==true) {
-                        parrafo.innerHTML = warnings
+                        if (ent==true) {
+                            parrafo.innerHTML = warnings
+                        }
+                        
                     } else {
-                        parrafo.innerHTML = "Enviado"
+                        parrafo.innerHTML = "Correo no disponibleS"
                     }
+
                     
                 }
+            })
+
+
+        })
+
+
+    })*/
+
+    $("#users").on("keyup",function() {
+        
+        const users = document.getElementById("users")
+        let warnings = ""
+        let entrar1 = false  
+        let entrar3 = false
+            
+        if (users.value.length >= 0) {
+    
+              $.ajax({
+              url: 'verificarUsuario.php',
+              type: 'POST',
+              data: $('#form').serialize(),
+    
+              success: function(res1){
+    
+                  if (res1==1) {
+    
+                      $("#Enviar").attr('disabled',true); //Desabilito el Botton
+                      $("input#password").attr('disabled',true); //Desabilito el campo de contraseña
+                      $("input#name").attr('disabled',true); //Desabilito el campo de nombre
+                      $("input#email").attr('disabled',true); //Desabilito el campo de correo
+                      warnings += `El usuario ya existe <br>`
+                      entrar1 = true;
+                      
+                      if (entrar1==true) {
+                          parrafo.innerHTML = warnings
+                      } else {
+                          parrafo.innerHTML = "Enviado"
+                      }
+                  
+                } 
+                else{
+    
+                    $("#Enviar").attr('disabled',false); //Habilito el Botton
+                    $("input#password").attr('disabled',false); //Habilito el input nombre
+                    $("input#name").attr('disabled',false); //Habilito el campo de nombre
+                      $("input#email").attr('disabled',false); //Habilito el campo de correo
+                    warnings += ``
+                    entrar3 = true;
+    
+                      
+                      
+                      if (entrar3==true) {
+                          parrafo.innerHTML = warnings
+                      } else {
+                          parrafo.innerHTML = "Enviado"
+                      }
+                }
             }          
+    
+        });
+    
+        } 
+            
+        });
+
+    $("#email").on("keyup",function() {
+        
+    const correo = document.getElementById("email")
+    let warnings = ""
+    let entrar = false  
+    let entrar2 = false
+        
+    if (correo.value.length >= 0) {
+
+          $.ajax({
+          url: 'verificarCorreo.php',
+          type: 'POST',
+          data: $('#form').serialize(),
+
+          success: function(res){
+
+              if (res==1) {
+
+                  $("#Enviar").attr('disabled',true); //Desabilito el Botton
+                  $("input#password").attr('disabled',true); //Desabilito el campo de contraseña
+                  $("input#p").attr('disabled',true); //Desabilito el campo de contraseña
+                  $("input#password").attr('disabled',true); //Desabilito el campo de contraseña
+                  warnings += `El correo electronico ya existe <br>`
+                  entrar = true;
+                  
+                  if (entrar==true) {
+                      parrafo.innerHTML = warnings
+                  } else {
+                      parrafo.innerHTML = "Enviado"
+                  }
+              
+            } 
+            else{
+
+                $("#Enviar").attr('disabled',false); //Habilito el Botton
+                $("input#password").attr('disabled',false); //Habilito el input nombre
+                warnings += ``
+                entrar2 = true;
+
+                  
+                  
+                  if (entrar2==true) {
+                      parrafo.innerHTML = warnings
+                  } else {
+                      parrafo.innerHTML = "Enviado"
+                  }
+            }
+        }          
+
+    });
+
+    } 
+        
+    });
+
+
+
+    $("#Enviar").click(function() {
+        
+    const nombre = document.getElementById("name")
+    const correo = document.getElementById("email")
+    const pass = document.getElementById("password")
+    const users = document.getElementById("users")
+    const pass1 = document.getElementById("password1")
+    let warnings = ""
+    let warnings1 = ""
+    let entrar = false
+    let entrar3 = false
+    let entrar2 = false
+
+
+        if (nombre.value.length > 0) {
+
+        if (users.value.length > 0) {
+
+        if (correo.value.length > 0){
+  
+        if (pass.value.length == 0){
+
+            alert("¡Faltan campos por llenar! Por favor llenarlos todos.");
+
+        }else if(pass.value.length < 8){
+
+        warnings += `la contraseña debe tener un minimo de 8 caracteres <br>`
+        entrar2 = true
+            
+        }else if(pass.value != pass1.value){
+            
+
+        warnings += `Las contraseñas no coinciden <br>`
+        entrar3 = true
+
+
+        }else{
+
+
+        $.ajax({
+        url: 'registro.php',
+        type: 'POST',
+        data: $('#form').serialize(),
+
+        success: function(res){
+
+            alert("Los datos se registraron correctamente.");
+            form.reset();
+
+        }          
 
         });
+
+        }
+
+        } else{
+            alert("¡Faltan campos por llenar! Por favor llenarlos todos.");
+        }
+
+
+        } else {
+            alert("¡Faltan campos por llenar! Por favor llenarlos todos.");
+        }  
+
 
         } else {
             alert("¡Faltan campos por llenar! Por favor llenarlos todos.");
         }
 
-        } else{
-            alert("¡Faltan campos por llenar! Por favor llenarlos todos.");
+        if (entrar2==true) {
+            parrafo.innerHTML = warnings
         }
 
-        } else{
-            alert("¡Faltan campos por llenar! Por favor llenarlos todos.");
+        if (entrar3==true) {
+            parrafo.innerHTML = warnings
         }
         
     });

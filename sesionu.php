@@ -1,3 +1,13 @@
+<?php
+session_start();
+error_reporting(0);
+$varsesion = $_SESSION['usuariolg'];
+
+if ($varsesion == null || $varsesion = '') {
+    echo 'TRAMPOSO USTED NO EXISTE';
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +20,7 @@
     
 <h1>BIENVENIDO
 </h1>
+<a href="cerrar.php">Cerrar sesion</a>
 
 </body>
 </html>

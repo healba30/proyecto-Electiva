@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -46,7 +42,7 @@
             <div class="grupo">
                 <input type="password" name="passlg" id="password" placeholder="Contraseña"><span class="barra"></span>
             </div>
-            <button type="button" id="btnEnviar" name="Enviar" >Iniciar sesión</button>
+            <button type="submit" id="btnEnviar" name="Enviar" >Iniciar sesión</button>
             <p class="warnings" id="warnings"></p>
         </div>
     </form>
@@ -55,15 +51,10 @@
 
 </body>
 
-
 <script>
 
 $('#btnEnviar').click(function(){
 
-    const nombre = document.getElementById("name")
-    const correo = document.getElementById("email")
-    const pass = document.getElementById("password")
-    const pass1 = document.getElementById("password1")
     let warnings1 = ""
     let entrar4 = false
     let entrar2 = false
@@ -78,16 +69,18 @@ $('#btnEnviar').click(function(){
                 console.log(respuesta);
                 if (!respuesta.error) {
                     if (respuesta.tipo == 'Admin') {
-                        location.href = "Registrate.html";
+                        
+                        location.href = "inicioadmin.php";
+
                     }else if(respuesta.tipo == 'Usuario'){
                         location.href = "sesionu.php";
                     }
                 }else{
-                    warnings1 += `Credenciales incorrectas`
+                  warnings1 += `Credenciales incorrectas`
                   entrar4 = true;
                   
                   if (entrar4==true) {
-                      parrafo.innerHTML = warnings1
+                    parrafo.innerHTML = warnings1
                   } 
                 }
             })
@@ -99,8 +92,6 @@ $('#btnEnviar').click(function(){
 
 
 </script>
-
-
 
 </html>
 

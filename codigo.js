@@ -19,7 +19,7 @@ form.addEventListener("submit", e=>{
     let entrar3 = false
 
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-    parrafo.innerHTML = ""
+    parrafo.innerHTML = "";
 
     if(nombre.value.length < 1){
         

@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['usuariolg'];
@@ -36,6 +35,7 @@ if ($varsesion == null || $varsesion = '') {
                         </div>
                         <nav class="menu">
                             <a href="inicioadmin.php">Inicio</a>
+                            <a href="mapaadmin.php" target="blank">Ir al mapa</a>
                             <a href="cerrar.php">Cerrar sesión</a>
                         </nav>
                     </div>
@@ -47,9 +47,8 @@ if ($varsesion == null || $varsesion = '') {
             <div class="container-menu">
                 <div class="cont-menu">
                     <nav>
-                        <a href="interfazhotel.php">Hoteles</a>
-                        <a href="interfazrestaurante.php">Restaurantes</a>
-                        <a href="#">Discotecas</a>
+                        <a href="interfazlugares.php">Lugares</a>
+                        <a href="interfazrestaurante.php">Lugares laravel</a>
                         <a href="interfazusuarios.php">Usuarios</a>
                     </nav>
                     <label for="btn-menu">✖️</label>

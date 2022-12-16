@@ -1,11 +1,11 @@
 <?php
 
 include_once('db.php');
-$cod = $_POST['cod'] ;
+$telefono2 = $_POST['telefono2'] ;
 
 $conectar = conn();
 
-$sql1 = "SELECT * FROM lugares WHERE cod = '$cod'";
+$sql1 = "SELECT * FROM discotecas WHERE telefono2 = '$telefono2'";
 $resultado = $conectar->query($sql1);
 $fila = mysqli_num_rows($resultado);
 
@@ -18,5 +18,6 @@ if ($fila<=0) {
     echo 1;
 
 }
+
 
 ?>

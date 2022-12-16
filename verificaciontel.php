@@ -1,11 +1,11 @@
 <?php
 
 include_once('db.php');
-$telefono1 = $_POST['telefono1'] ;
+$telefono = $_POST['telefono'] ;
 
 $conectar = conn();
 
-$sql1 = "SELECT * FROM restaurantes WHERE telefono1 = '$telefono1'";
+$sql1 = "SELECT * FROM lugares WHERE telefono = '$telefono'";
 $resultado = $conectar->query($sql1);
 $fila = mysqli_num_rows($resultado);
 

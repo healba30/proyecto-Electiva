@@ -3,15 +3,21 @@
 include_once('db.php');
 $conectar = conn();
 
-$cod_hotel=$_POST['cod_hotel'];
+$cod=$_POST['cod'];
 $telefono=$_POST['telefono'];
 $nombre=$_POST['nombre'];
 $direccion=$_POST['direccion'];
+$coordenada=$_POST['coordenada'];
 
-$sql="UPDATE hoteles SET  telefono='$telefono',nombre='$nombre',direccion='$direccion' WHERE cod_hotel='$cod_hotel'";
-$query=mysqli_query($conectar,$sql);
+if ($cod == '' || $nombre == '' ||
+$direccion == '' || $coordenada == '') {
 
-    if($query){
-        Header("Location: interfazhotel.php");
-    }
+echo 1;
+
+}else{
+
+$sql1="UPDATE lugares SET  telefono='$telefono',nombre='$nombre',direccion='$direccion',coordenada='$coordenada' WHERE cod='$cod'";
+$query1=mysqli_query($conectar,$sql1);
+
+}
 ?>

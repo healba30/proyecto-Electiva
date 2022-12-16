@@ -3,9 +3,9 @@
 include_once('db.php');
 $conectar = conn();
 
-$cod_hotel=$_GET['id'];
+$cod=$_GET['id'];
 
-$sql="DELETE FROM hoteles  WHERE cod_hotel='$cod_hotel'";
+$sql="DELETE FROM lugares  WHERE cod='$cod'";
 $query=mysqli_query($conectar,$sql);
 
     if($query){

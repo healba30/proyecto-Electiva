@@ -5,7 +5,7 @@ include_once('db.php');
 $nombres = $_POST['nombres'] ;
 $usuarios = $_POST['usuarios'] ;
 $correo = $_POST['correo'] ;
-$clave = md5($_POST['clave']) ;
+$clave = $_POST['clave'] ;
 $tipo_u = "Usuario";
 
 $conectar = conn();

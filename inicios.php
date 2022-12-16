@@ -73,7 +73,7 @@ $('#btnEnviar').click(function(){
                         location.href = "inicioadmin.php";
 
                     }else if(respuesta.tipo == 'Usuario'){
-                        location.href = "sesionu.php";
+                        location.href = "iniciousuario.php";
                     }
                 }else{
                   warnings1 += `Credenciales incorrectas`

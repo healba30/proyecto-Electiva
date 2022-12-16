@@ -26,7 +26,6 @@ if ($varsesion == null || $varsesion = '') {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
-
                 <header class="header">
                     <div class="container">
                     <div class="btn-menu">
@@ -37,6 +36,7 @@ if ($varsesion == null || $varsesion = '') {
                         </div>
                         <nav class="menu">
                             <a href="inicioadmin.php">Inicio</a>
+                            <a href="mapaadmin.php" target="blank">Ir al mapa</a>
                             <a href="cerrar.php">Cerrar sesión</a>
                         </nav>
                     </div>
@@ -47,9 +47,8 @@ if ($varsesion == null || $varsesion = '') {
             <div class="container-menu">
                 <div class="cont-menu">
                     <nav>
-                        <a href="interfazhotel.php">Hoteles</a>
-                        <a href="interfazrestaurante.php">Restaurantes</a>
-                        <a href="#">Discotecas</a>
+                        <a href="interfazlugares.php">Lugares</a>
+                        <a href="interfazrestaurante.php">Lugares laravel</a>
                         <a href="interfazusuarios.php">Usuarios</a>
                     </nav>
                     <label for="btn-menu">✖️</label>
@@ -73,7 +72,6 @@ if ($varsesion == null || $varsesion = '') {
                                         <option value="Usuario">Usuario</option>
                                         <option value="Admin">Admin</option>
                                     </select>
-                                    
                                     <input type="submit" class="btn btn-primary" id="Agregar" value="Agregar">
                                     <p class="warnings" id="warnings"></p>
                                 </form>
@@ -123,18 +121,11 @@ if ($varsesion == null || $varsesion = '') {
             </div>
             <script src="codigo.js"></script>
     </body>
-
     <script>
-
 $("#Agregar").click(function() {
         
         const ID = document.getElementById("ID")
-        let warnings = ""
-        let entrar1 = false  
-        let entrar3 = false
-            
-        
-    
+
               $.ajax({
               url: 'insertarU.php',
               type: 'POST',
@@ -143,32 +134,20 @@ $("#Agregar").click(function() {
               success: function(res1){
     
                   if (res1==1) {
-    
-                     
-                      alert("Hay campos vacíos");
-                      
-                  
+         
+                      alert("Hay campos vacíos");     
                 } 
                 else{
     
                     location.reload();
-
                 }
             }          
-    
-        });
-        
-    
-        
-            
+        });   
         });
 
 $("#ID").on("focusout",function() {
         
         const ID = document.getElementById("ID")
-        let warnings = ""
-        let entrar1 = false  
-        let entrar3 = false
             
         if (ID.value.length >= 0) {
     
@@ -187,8 +166,7 @@ $("#ID").on("focusout",function() {
                       $("input#email").attr('disabled',true); //Desabilito el campo de correo
                       $("input#password").attr('disabled',true); //Desabilito el campo de correo
                       $("#tipo_u").attr('disabled',true); //Desabilito el campo de correo
-                      alert("Este id ya existe en la base de datos");
-                  
+                      alert("Este id ya existe en la base de datos");    
                 } 
                 else{
     
@@ -198,19 +176,49 @@ $("#ID").on("focusout",function() {
                       $("input#email").attr('disabled',false); //Desabilito el campo de correo
                       $("input#password").attr('disabled',false); //Desabilito el campo de correo
                       $("#tipo_u").attr('disabled',false); //Desabilito el campo de correo
+                }
+            }         
+        });
+        }         
+        });
 
+$("#users").on("focusout",function() {
+        
+        const usu = document.getElementById("users")
+        
+        if (usu.value.length >= 0) {
+    
+              $.ajax({
+              url: 'verificacionusu.php',
+              type: 'POST',
+              data: $('#form').serialize(),
+    
+              success: function(res1){
+    
+                  if (res1==1) {
+    
+                      $("input#Agregar").attr('disabled',true); //Desabilito el Botton
+                      $("input#name").attr('disabled',true); //Desabilito el campo de contraseña
+                      $("input#ID").attr('disabled',true); //Desabilito el campo de nombre
+                      $("input#email").attr('disabled',true); //Desabilito el campo de correo
+                      $("input#password").attr('disabled',true); //Desabilito el campo de correo
+                      $("#tipo_u").attr('disabled',true); //Desabilito el campo de correo
+                      alert("Este usuario ya existe en la base de datos");                 
+                } 
+                else{
+    
+                      $("input#Agregar").attr('disabled',false); //Desabilito el Botton
+                      $("input#name").attr('disabled',false); //Desabilito el campo de contraseña
+                      $("input#ID").attr('disabled',false); //Desabilito el campo de nombre
+                      $("input#email").attr('disabled',false); //Desabilito el campo de correo
+                      $("input#password").attr('disabled',false); //Desabilito el campo de correo
+                      $("#tipo_u").attr('disabled',false); //Desabilito el campo de correo
                 }
             }          
-    
         });
-        
-    
-        } 
-            
+        }       
         });
-
 
     </script>
-    
 
 </html>

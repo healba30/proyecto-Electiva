@@ -6,15 +6,16 @@ $cod_res=$_POST['cod_res'];
 $telefono1=$_POST['telefono1'];
 $nombre1=$_POST['nombre1'];
 $direccion1=$_POST['direccion1'];
+$coordenada1=$_POST['coordenada1'];
 
 if ($cod_res == '' || $telefono1 == '' || $nombre1 == '' ||
-$direccion1 == '') {
+$direccion1 == '' || $coordenada1 == '') {
 
 echo 1;
 
 }else{
 
-$sql1="INSERT INTO restaurantes VALUES('$cod_res','$telefono1','$nombre1','$direccion1')";
+$sql1="INSERT INTO restaurantes VALUES('$cod_res','$telefono1','$nombre1','$direccion1','$coordenada1')";
 $query1= mysqli_query($conectar,$sql1);
 
 }

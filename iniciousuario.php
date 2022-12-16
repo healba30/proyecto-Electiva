@@ -21,6 +21,8 @@ if ($varsesion == null || $varsesion = '') {
 <h1>BIENVENIDO
 </h1>
 <a href="cerrar.php">Cerrar sesion</a>
+<a href="mapa.php" target="blank">Ir al mapa</a>
+
 
 </body>
 </html>

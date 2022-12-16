@@ -16,7 +16,7 @@ if ($varsesion == null || $varsesion = '') {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> Agregar restaurantes</title>
+        <title>Agregar Discotecas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="img/descarga-assets/Captura.png" type="image/x-icon">
@@ -62,14 +62,22 @@ if ($varsesion == null || $varsesion = '') {
                         
                         <div class="col-md-3">
                             <h1>Ingrese los datos</h1>
-                            <h2>Tabla de restaurantes</h2>
-                                <form action="insertarR.php" method="POST" class="form" id="form">
+                            <h2>Tabla de discotecas</h2>
+                                <form action="insertarD.php" method="POST" class="form" id="form">
 
-                                    <input type="text" class="form-control mb-3" name="cod_res" id="cod_res" placeholder="Cod restaurante">
-                                    <input type="text" class="form-control mb-3" name="telefono1" id="telefono1" placeholder="Telefono">
-                                    <input type="text" class="form-control mb-3" name="nombre1" id="nombre1" placeholder="Nombre">
-                                    <input type="text" class="form-control mb-3" name="direccion1" id="direccion1" placeholder="Direccion">
-                                    <input type="text" class="form-control mb-3" name="coordenada1" id="coordenada1" placeholder="Coordenada">
+                                    <input type="text" class="form-control mb-3" name="cod_dis" id="cod_dis" placeholder="Cod disco">
+                                    <input type="text" class="form-control mb-3" name="telefono2" id="telefono2" placeholder="Telefono">
+                                    <input type="text" class="form-control mb-3" name="nombre2" id="nombre2" placeholder="Nombre">
+                                    <input type="text" class="form-control mb-3" name="direccion2" id="direccion2" placeholder="Direccion">
+                                    <label for="">Estrellas</label>
+                                    <select name="calificacion2" id="calificacion2">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <input type="text" class="form-control mb-3" name="coordenada2" id="coordenada2" placeholder="Coordenada">
                                     
                                     <input type="submit" class="btn btn-primary" id="Agregar" value="Agregar">
                                 </form>
@@ -82,6 +90,7 @@ if ($varsesion == null || $varsesion = '') {
                                         <th>Codigo</th>
                                         <th>Telefono</th>
                                         <th>Nombre</th>
+                                        <th>Estrellas</th>
                                         <th>Direccion</th>
                                         <th>Coordenada</th>
                                         <th></th>
@@ -92,20 +101,21 @@ if ($varsesion == null || $varsesion = '') {
                                 <tbody>
                                         <?php
 
-                                        $sqli="SELECT * FROM restaurantes";
+                                        $sqli="SELECT * FROM discotecas";
                                         $result=mysqli_query($conectar,$sqli);
 
                                         while ($mostrar=mysqli_fetch_array($result)) {
                                             
                                         ?>
                                             <tr>
-                                                <th><?php  echo $mostrar['cod_res']?></th>
-                                                <th><?php  echo $mostrar['telefono1']?></th>
-                                                <th><?php  echo $mostrar['nombre1']?></th>
-                                                <th><?php  echo $mostrar['direccion1']?></th>    
-                                                <th><?php  echo $mostrar['coordenada1']?></th>    
-                                                <th><a href="actualizarR.php?id=<?php echo $mostrar['cod_res'] ?>" class="btn btn-info">Editar</a></th>
-                                                <th><a href="deleteR.php?id=<?php echo $mostrar['cod_res'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+                                                <th><?php  echo $mostrar['cod_dis']?></th>
+                                                <th><?php  echo $mostrar['telefono2']?></th>
+                                                <th><?php  echo $mostrar['nombre2']?></th>
+                                                <th><?php  echo $mostrar['calificacion2']?></th>
+                                                <th><?php  echo $mostrar['direccion2']?></th> 
+                                                <th><?php  echo $mostrar['coordenada2']?></th>    
+                                                <th><a href="actualizarD.php?id=<?php echo $mostrar['cod_dis'] ?>" class="btn btn-info">Editar</a></th>
+                                                <th><a href="deleteD.php?id=<?php echo $mostrar['cod_dis'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
                                             </tr>
                                         <?php 
                                             }
@@ -118,46 +128,42 @@ if ($varsesion == null || $varsesion = '') {
             <script src="codigo.js"></script>
     </body>
 
-            
     <script>
 
 $("#Agregar").click(function() {
     
-              $.ajax({
-              url: 'insertarR.php',
-              type: 'POST',
-              data: $('#form').serialize(),
-    
-              success: function(res1){
-    
-                  if (res1==1) {
-    
-                     
-                      alert("Hay campos vacíos");
-                      
-                  
-                } 
-                else{
-    
-                    location.reload();
+    $.ajax({
+    url: 'insertarD.php',
+    type: 'POST',
+    data: $('#form').serialize(),
 
-                }
-            }          
-    
-        });           
-        });
+    success: function(res1){
 
-$("#telefono1").on("focusout",function() {
+        if (res1==1) {
+
+           
+        alert("Hay campos vacíos");
+            
         
-        const tel = document.getElementById("telefono1")
-        let warnings = ""
-        let entrar1 = false  
-        let entrar3 = false
+      } 
+      else{
+
+        location.reload();
+
+      }
+  }          
+
+});           
+});
+
+$("#telefono2").on("focusout",function() {
+        
+        const tel = document.getElementById("telefono2")
             
         if (tel.value.length >= 0) {
     
               $.ajax({
-              url: 'verificaciontelR.php',
+              url: 'verificaciontelD.php',
               type: 'POST',
               data: $('#form').serialize(),
     
@@ -166,19 +172,22 @@ $("#telefono1").on("focusout",function() {
                   if (res1==1) {
     
                       $("input#Agregar").attr('disabled',true); //Desabilito el Botton
-                      $("input#cod_res").attr('disabled',true); //Desabilito el campo de contraseña
-                      $("input#nombre1").attr('disabled',true); //Desabilito el campo de nombre
-                      $("input#direccion1").attr('disabled',true); //Desabilito el campo de correo
+                      $("input#cod_dis").attr('disabled',true); //Desabilito el campo del codigo
+                      $("#calificacion2").attr('disabled',true); //Desabilito el campo del codigo
+                      $("input#nombre2").attr('disabled',true); //Desabilito el campo de nombre
+                      $("input#direccion2").attr('disabled',true); //Desabilito el campo de correo
+                      $("input#coordenada2").attr('disabled',true); //Desabilito el campo de la coordenada
                       alert("Este telefono ya existe en la base de datos");
                   
                 } 
                 else{
     
                     $("input#Agregar").attr('disabled',false); //Habilito el Botton
-                    $("input#cod_res").attr('disabled',false); //Habilito el input nombre
-                    $("input#nombre1").attr('disabled',false); //Habilito el campo de nombre
-                    $("input#direccion1").attr('disabled',false); //Habilito el campo de correo
-
+                    $("input#cod_dis").attr('disabled',false); //Habilito el input nombre
+                    $("#calificacion2").attr('disabled',false); //Habilito el input nombre
+                    $("input#nombre2").attr('disabled',false); //Habilito el campo de nombre
+                    $("input#direccion2").attr('disabled',false); //Habilito el campo de correo
+                    $("input#coordenada2").attr('disabled',false); //Desabilito el campo de correo
                 }
             }          
     
@@ -189,18 +198,14 @@ $("#telefono1").on("focusout",function() {
             
         });
 
-
-$("#cod_res").on("focusout",function() {
+$("#cod_dis").on("focusout",function() {
         
-        const cod = document.getElementById("cod_res")
-        let warnings = ""
-        let entrar1 = false  
-        let entrar3 = false
+        const codd = document.getElementById("cod_dis")
             
-        if (cod.value.length >= 0) {
+        if (codd.value.length >= 0) {
     
               $.ajax({
-              url: 'verificacioncodR.php',
+              url: 'verificacioncodD.php',
               type: 'POST',
               data: $('#form').serialize(),
     
@@ -209,19 +214,22 @@ $("#cod_res").on("focusout",function() {
                   if (res1==1) {
     
                       $("input#Agregar").attr('disabled',true); //Desabilito el Botton
-                      $("input#telefono1").attr('disabled',true); //Desabilito el campo de contraseña
-                      $("input#nombre1").attr('disabled',true); //Desabilito el campo de nombre
-                      $("input#direccion1").attr('disabled',true); //Desabilito el campo de correo
-                      alert("Este codigo ya existe en la base de datos");
+                      $("input#telefono2").attr('disabled',true); //Desabilito el campo del codigo
+                    $("#calificacion2").attr('disabled',true); //Habilito el input nombre
+                      $("input#nombre2").attr('disabled',true); //Desabilito el campo de nombre
+                      $("input#direccion2").attr('disabled',true); //Desabilito el campo de correo
+                      $("input#coordenada2").attr('disabled',true); //Desabilito el campo de la coordenada
+                      alert("Este telefono ya existe en la base de datos");
                   
                 } 
                 else{
     
                     $("input#Agregar").attr('disabled',false); //Habilito el Botton
-                    $("input#telefono1").attr('disabled',false); //Habilito el input nombre
-                    $("input#nombre1").attr('disabled',false); //Habilito el campo de nombre
-                    $("input#direccion1").attr('disabled',false); //Habilito el campo de correo
-
+                    $("input#telefono2").attr('disabled',false); //Habilito el input nombre
+                    $("#calificacion2").attr('disabled',false); //Habilito el input nombre
+                    $("input#nombre2").attr('disabled',false); //Habilito el campo de nombre
+                    $("input#direccion2").attr('disabled',false); //Habilito el campo de correo
+                    $("input#coordenada2").attr('disabled',false); //Desabilito el campo de correo
                 }
             }          
     

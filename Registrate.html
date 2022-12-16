@@ -68,46 +68,7 @@
 
 <script>  
 
-    
 
-   /*$(document).ready(function() {
-        
-        $("#correo").on("focusout", function() {
-
-            let warnings = ""
-            let ent = false
-            
-            
-                $.ajax({
-          url: 'verificar.php',
-          type: 'POST',
-          data: $('#form').serialize(),
-
-          success: function(resul){
-
-                    if (resul==1) {
-                        warnings += `correo disponible`
-                        ent = true
-
-                        if (ent==true) {
-                            parrafo.innerHTML = warnings
-                        }
-                        
-                    } else {
-                        parrafo.innerHTML = "Correo no disponibleS"
-                    }
-
-                    
-                }
-            })
-
-
-        })
-
-
-    })*/
-
-    
     $("#users").on("keyup",function() {
         
         const users = document.getElementById("users")
